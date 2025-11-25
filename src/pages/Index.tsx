@@ -135,54 +135,59 @@ const Index = () => {
 
       <section id="about" className="py-20 bg-muted/30">
         <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold font-heading mb-6">О проекте</h2>
-            <p className="text-lg text-muted-foreground">
-              Компьютерные куры — это образовательная платформа, где каждый может освоить IT-профессию. 
-              Мы верим, что технологии должны быть доступны всем, независимо от возраста и опыта.
-            </p>
-          </div>
-          
-          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            <Card className="text-center hover:shadow-lg transition-shadow animate-fade-in">
+          <div className="max-w-4xl mx-auto mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold font-heading mb-8 text-center">О нас</h2>
+            
+            <Card className="mb-8 animate-fade-in">
               <CardHeader>
-                <div className="mx-auto mb-4 w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center">
-                  <Icon name="Target" className="text-primary" size={32} />
-                </div>
-                <CardTitle>Наша миссия</CardTitle>
+                <CardTitle className="text-2xl text-center">
+                  Центр повышения квалификации<br />
+                  "Современные информационные технологии"
+                </CardTitle>
               </CardHeader>
-              <CardContent>
+              <CardContent className="space-y-6 text-base leading-relaxed">
                 <p className="text-muted-foreground">
-                  Делать качественное IT-образование доступным для каждого человека
+                  Центр повышения квалификации "Современные информационные технологии" – преемник лучших традиций 
+                  методической службы, основанной более 10 лет назад.
+                </p>
+                <p className="text-muted-foreground">
+                  Центром руководит <span className="font-semibold text-foreground">Заслуженный деятель науки РФ Иванов И.И.</span> В составе 
+                  лаборатории работают доктора и кандидаты технических, физико-математических и педагогических наук.
                 </p>
               </CardContent>
             </Card>
 
-            <Card className="text-center hover:shadow-lg transition-shadow animate-fade-in" style={{ animationDelay: '0.1s' }}>
+            <Card className="animate-fade-in" style={{ animationDelay: '0.1s' }}>
               <CardHeader>
-                <div className="mx-auto mb-4 w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center">
-                  <Icon name="Users" className="text-secondary" size={32} />
-                </div>
-                <CardTitle>Наша команда</CardTitle>
+                <CardTitle className="text-xl flex items-center gap-2">
+                  <Icon name="Target" className="text-primary" size={24} />
+                  Приоритетные направления деятельности Центра
+                </CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-muted-foreground">
-                  Опытные практикующие специалисты из ведущих IT-компаний
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="text-center hover:shadow-lg transition-shadow animate-fade-in" style={{ animationDelay: '0.2s' }}>
-              <CardHeader>
-                <div className="mx-auto mb-4 w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center">
-                  <Icon name="Award" className="text-primary" size={32} />
-                </div>
-                <CardTitle>Наши ценности</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground">
-                  Практический подход, современные технологии, поддержка студентов
-                </p>
+                <ul className="space-y-4">
+                  <li className="flex items-start gap-3">
+                    <div className="w-2 h-2 rounded-full bg-primary mt-2 flex-shrink-0"></div>
+                    <p className="text-muted-foreground">Консультативно-методическая поддержка</p>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="w-2 h-2 rounded-full bg-primary mt-2 flex-shrink-0"></div>
+                    <p className="text-muted-foreground">
+                      Разработка и внедрение в педагогическую практику современных информационных 
+                      и коммуникационных образовательных технологий
+                    </p>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="w-2 h-2 rounded-full bg-primary mt-2 flex-shrink-0"></div>
+                    <p className="text-muted-foreground">Информатизация образовательного процесса</p>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="w-2 h-2 rounded-full bg-primary mt-2 flex-shrink-0"></div>
+                    <p className="text-muted-foreground">
+                      Развитие на базе интернет-технологий системы дистанционного образования
+                    </p>
+                  </li>
+                </ul>
               </CardContent>
             </Card>
           </div>
