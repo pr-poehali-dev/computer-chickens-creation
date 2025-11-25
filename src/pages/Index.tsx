@@ -203,7 +203,12 @@ const Index = () => {
             </p>
           </div>
 
-          <div className="max-w-5xl mx-auto space-y-8">
+          <div className="max-w-5xl mx-auto space-y-12">
+            <div id="beginner" className="scroll-mt-20">
+              <h3 className="text-2xl font-bold font-heading mb-6 flex items-center gap-3">
+                <Icon name="Star" className="text-primary" size={28} />
+                Для начинающих
+              </h3>
             <Card className="animate-fade-in border-primary/20 shadow-lg">
               <CardHeader className="bg-primary/5">
                 <div className="flex items-center gap-3 mb-2">
@@ -264,36 +269,80 @@ const Index = () => {
                 </div>
               </CardContent>
             </Card>
+            </div>
 
-            <div className="grid md:grid-cols-2 gap-6">
-              {courses.slice(1).map((course, index) => (
-                <Card key={course.id} className="hover:shadow-xl transition-all hover:-translate-y-1 animate-fade-in" style={{ animationDelay: `${(index + 1) * 0.1}s` }}>
-                  <CardHeader>
-                    <div className="flex items-start justify-between mb-4">
-                      <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
-                        <Icon name={course.icon as any} className="text-primary" size={24} />
+            <div id="intermediate" className="scroll-mt-20">
+              <h3 className="text-2xl font-bold font-heading mb-6 flex items-center gap-3">
+                <Icon name="TrendingUp" className="text-secondary" size={28} />
+                Средний уровень
+              </h3>
+              <div className="grid md:grid-cols-2 gap-6">
+                {courses.filter(c => c.level === "Средний").map((course, index) => (
+                  <Card key={course.id} className="hover:shadow-xl transition-all hover:-translate-y-1 animate-fade-in" style={{ animationDelay: `${index * 0.1}s` }}>
+                    <CardHeader>
+                      <div className="flex items-start justify-between mb-4">
+                        <div className="w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center">
+                          <Icon name={course.icon as any} className="text-secondary" size={24} />
+                        </div>
+                        <span className="text-sm font-medium text-secondary bg-secondary/10 px-3 py-1 rounded-full">
+                          {course.level}
+                        </span>
                       </div>
-                      <span className="text-sm font-medium text-primary bg-primary/10 px-3 py-1 rounded-full">
-                        {course.level}
-                      </span>
-                    </div>
-                    <CardTitle className="text-xl">{course.title}</CardTitle>
-                    <CardDescription className="flex items-center gap-4 mt-2">
-                      <span className="flex items-center gap-1">
-                        <Icon name="Clock" size={16} />
-                        {course.duration}
-                      </span>
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-muted-foreground mb-4">{course.description}</p>
-                    <Button variant="outline" className="w-full">
-                      Подробнее
-                      <Icon name="ArrowRight" size={16} className="ml-2" />
-                    </Button>
-                  </CardContent>
-                </Card>
-              ))}
+                      <CardTitle className="text-xl">{course.title}</CardTitle>
+                      <CardDescription className="flex items-center gap-4 mt-2">
+                        <span className="flex items-center gap-1">
+                          <Icon name="Clock" size={16} />
+                          {course.duration}
+                        </span>
+                      </CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                      <p className="text-muted-foreground mb-4">{course.description}</p>
+                      <Button variant="outline" className="w-full">
+                        Подробнее
+                        <Icon name="ArrowRight" size={16} className="ml-2" />
+                      </Button>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            </div>
+
+            <div id="advanced" className="scroll-mt-20">
+              <h3 className="text-2xl font-bold font-heading mb-6 flex items-center gap-3">
+                <Icon name="Zap" className="text-accent" size={28} />
+                Продвинутый уровень
+              </h3>
+              <div className="grid md:grid-cols-2 gap-6">
+                {courses.filter(c => c.level === "Продвинутый").map((course, index) => (
+                  <Card key={course.id} className="hover:shadow-xl transition-all hover:-translate-y-1 animate-fade-in" style={{ animationDelay: `${index * 0.1}s` }}>
+                    <CardHeader>
+                      <div className="flex items-start justify-between mb-4">
+                        <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center">
+                          <Icon name={course.icon as any} className="text-accent" size={24} />
+                        </div>
+                        <span className="text-sm font-medium text-accent bg-accent/10 px-3 py-1 rounded-full">
+                          {course.level}
+                        </span>
+                      </div>
+                      <CardTitle className="text-xl">{course.title}</CardTitle>
+                      <CardDescription className="flex items-center gap-4 mt-2">
+                        <span className="flex items-center gap-1">
+                          <Icon name="Clock" size={16} />
+                          {course.duration}
+                        </span>
+                      </CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                      <p className="text-muted-foreground mb-4">{course.description}</p>
+                      <Button variant="outline" className="w-full">
+                        Подробнее
+                        <Icon name="ArrowRight" size={16} className="ml-2" />
+                      </Button>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
             </div>
           </div>
         </div>
