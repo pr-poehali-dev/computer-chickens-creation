@@ -203,35 +203,98 @@ const Index = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
-            {courses.map((course, index) => (
-              <Card key={course.id} className="hover:shadow-xl transition-all hover:-translate-y-1 animate-fade-in" style={{ animationDelay: `${index * 0.1}s` }}>
-                <CardHeader>
-                  <div className="flex items-start justify-between mb-4">
-                    <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
-                      <Icon name={course.icon as any} className="text-primary" size={24} />
-                    </div>
-                    <span className="text-sm font-medium text-primary bg-primary/10 px-3 py-1 rounded-full">
-                      {course.level}
-                    </span>
+          <div className="max-w-5xl mx-auto space-y-8">
+            <Card className="animate-fade-in border-primary/20 shadow-lg">
+              <CardHeader className="bg-primary/5">
+                <div className="flex items-center gap-3 mb-2">
+                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
+                    <Icon name="Laptop" className="text-primary" size={24} />
                   </div>
-                  <CardTitle className="text-xl">{course.title}</CardTitle>
-                  <CardDescription className="flex items-center gap-4 mt-2">
-                    <span className="flex items-center gap-1">
-                      <Icon name="Clock" size={16} />
-                      {course.duration}
-                    </span>
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground mb-4">{course.description}</p>
-                  <Button variant="outline" className="w-full">
-                    Подробнее
-                    <Icon name="ArrowRight" size={16} className="ml-2" />
+                  <div>
+                    <CardTitle className="text-2xl">Компьютерная азбука для начинающих</CardTitle>
+                    <CardDescription className="text-base mt-1">
+                      <span className="inline-flex items-center gap-1">
+                        <Icon name="Clock" size={16} />
+                        Понедельник – Пятница, с 10 до 19
+                      </span>
+                    </CardDescription>
+                  </div>
+                </div>
+              </CardHeader>
+              <CardContent className="pt-6 space-y-6">
+                <p className="text-muted-foreground">
+                  Центр повышения квалификации "Современные информационные технологии" – преемник лучших традиций 
+                  методической службы, основанной более 10 лет назад.
+                </p>
+                
+                <div>
+                  <h4 className="font-semibold text-foreground mb-4 flex items-center gap-2">
+                    <Icon name="BookOpen" className="text-primary" size={20} />
+                    В курс включены:
+                  </h4>
+                  <ul className="space-y-3">
+                    <li className="flex items-start gap-3">
+                      <div className="w-2 h-2 rounded-full bg-primary mt-2 flex-shrink-0"></div>
+                      <p className="text-muted-foreground">
+                        <span className="font-medium text-foreground">10 учебных модулей</span> с примерами и упражнениями, 
+                        позволяющими с первых уроков приобретать практические навыки и без усилий усваивать необходимые знания
+                      </p>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <div className="w-2 h-2 rounded-full bg-primary mt-2 flex-shrink-0"></div>
+                      <p className="text-muted-foreground">
+                        <span className="font-medium text-foreground">10 заданий для домашней работы</span>, которые будет 
+                        проверять и оценивать ваш преподаватель
+                      </p>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <div className="w-2 h-2 rounded-full bg-primary mt-2 flex-shrink-0"></div>
+                      <p className="text-muted-foreground">
+                        <span className="font-medium text-foreground">Итоговый экзаменационный тест</span>
+                      </p>
+                    </li>
+                  </ul>
+                </div>
+
+                <div className="pt-4 border-t">
+                  <Button className="w-full sm:w-auto">
+                    <Icon name="UserPlus" size={20} className="mr-2" />
+                    Записаться на курс
                   </Button>
-                </CardContent>
-              </Card>
-            ))}
+                </div>
+              </CardContent>
+            </Card>
+
+            <div className="grid md:grid-cols-2 gap-6">
+              {courses.slice(1).map((course, index) => (
+                <Card key={course.id} className="hover:shadow-xl transition-all hover:-translate-y-1 animate-fade-in" style={{ animationDelay: `${(index + 1) * 0.1}s` }}>
+                  <CardHeader>
+                    <div className="flex items-start justify-between mb-4">
+                      <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
+                        <Icon name={course.icon as any} className="text-primary" size={24} />
+                      </div>
+                      <span className="text-sm font-medium text-primary bg-primary/10 px-3 py-1 rounded-full">
+                        {course.level}
+                      </span>
+                    </div>
+                    <CardTitle className="text-xl">{course.title}</CardTitle>
+                    <CardDescription className="flex items-center gap-4 mt-2">
+                      <span className="flex items-center gap-1">
+                        <Icon name="Clock" size={16} />
+                        {course.duration}
+                      </span>
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-muted-foreground mb-4">{course.description}</p>
+                    <Button variant="outline" className="w-full">
+                      Подробнее
+                      <Icon name="ArrowRight" size={16} className="ml-2" />
+                    </Button>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
           </div>
         </div>
       </section>
